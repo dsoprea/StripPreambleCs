@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripPreamble", "StripPreamble\StripPreamble.csproj", "{98C4E333-4696-4DD2-83A3-F91E2F6241AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StripPreambleCommand", "StripPreambleCommand\StripPreambleCommand.csproj", "{889C5646-5165-4647-839F-0570C795A5A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98C4E333-4696-4DD2-83A3-F91E2F6241AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C4E333-4696-4DD2-83A3-F91E2F6241AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C4E333-4696-4DD2-83A3-F91E2F6241AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C4E333-4696-4DD2-83A3-F91E2F6241AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889C5646-5165-4647-839F-0570C795A5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889C5646-5165-4647-839F-0570C795A5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889C5646-5165-4647-839F-0570C795A5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889C5646-5165-4647-839F-0570C795A5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

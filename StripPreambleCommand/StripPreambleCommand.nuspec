@@ -3,15 +3,18 @@
   <metadata>
     <id>$id$</id>
     <version>0.1.0</version>
-    <title>File Concatenator and Preamble Stripper</title>
+    <title>File Concatenator and Preamble Stripper (Command-Line Tool)</title>
     <authors>Dustin Oprea</authors>
     <owners>Dustin Oprea</owners>
     <licenseUrl>http://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
-    <projectUrl>https://github.com/dsoprea/PreambleStripper</projectUrl>
+    <projectUrl>https://github.com/dsoprea/StripPreambleCs</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Concatenate a list of files/patterns and strip preamble from the top of them if necessary.</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Initial publish.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>preamble concatenate</tags>
+    <dependencies>
+      <dependency id="StripPreamble" version="0.1.1" />
+    </dependencies>
   </metadata>
 </package>

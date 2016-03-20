@@ -1,3 +1,11 @@
-/StripPreamble.csproj.user
-/obj/
-/bin/
+.vs
+packages
+
+/StripPreamble/bin
+/StripPreamble/obj
+/StripPreambleCommand/bin
+/StripPreambleCommand/obj
+
+*.csproj.user
+*.nupkg
+
