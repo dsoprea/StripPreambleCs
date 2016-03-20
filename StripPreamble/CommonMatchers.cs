@@ -29,7 +29,7 @@ namespace StripPreamble
         public static PreambleMatcher VisualStudioSql = new PreambleMatcher(
             new List<PreambleState>() {
                 new PreambleState(new List<string>() { @"^/\*$" }, 1, 1),
-                new PreambleState(new List<string>() { @"^(Post|Pre)\-Deployment Script Template$" }, 1, 1),
+                new PreambleState(new List<string>() { @"^(Pre|Post)\-Deployment Script Template$" }, 1, 1),
                 new PreambleState(new List<string>() { RX_SEPARATOR2 }, 1, 1),
                 new PreambleState(new List<string>() { @"^[^-]" }, 1, null),
                 new PreambleState(new List<string>() { RX_SEPARATOR2 }, 1, 1),
