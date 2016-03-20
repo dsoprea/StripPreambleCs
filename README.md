@@ -147,4 +147,4 @@ The lines beginning with "Reading:" are printed to STDERR but the file-content (
 The matcher has two properties that you might find useful to set:
 
 - `Debug`: Whether to print hit/miss information to the debugger console. FALSE by default.
-- `StripLines`: Whether to automatically strip every line before checking. TRUE by default.
+- `StripLines`: Whether to automatically trim (remove whitespace on) every line before checking. TRUE by default.
