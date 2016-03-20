@@ -98,12 +98,12 @@ A console-tool project is included. The common-matcher class has a dictionary th
 
 Three are three ways to acquire/build StripPreamble:
 
-1. Install the library via [NuGet](https://www.nuget.org/packages/StripPreamble) and implement it from your own application/tool.
-2. Clone the [whole project](https://github.com/dsoprea/StripPreambleCs) (which includes both the assembly and the command-line tool) and open and build the solution from the root of the project.
+1. Clone the [whole project](https://github.com/dsoprea/StripPreambleCs) (which includes both the assembly and the command-line tool) and open and build the solution from the root of the project.
+2. Install the library via [NuGet](https://www.nuget.org/packages/StripPreamble) and implement it from your own application/tool.
 3. Clone the [whole project](https://github.com/dsoprea/StripPreambleCs) (or download a zip-archive), open the console solution via the solution in the console-project's directory, and allow it to download the assembly via NuGet.
 4. Build the assembly directly using the solution in the assembly directory. 
 
-(2) is suggested if you just want to use it as a simple console tool.
+(1) is the simplest.
 
 
 ## Usage
@@ -146,5 +146,5 @@ The lines beginning with "Reading:" are printed to STDERR but the file-content (
 
 The matcher has two properties that you might find useful to set:
 
-`Debug`: Whether to print hit/miss information to the debugger console. FALSE by default.
-`StripLines`: Whether to automatically strip every line before checking. TRUE by default.
+- `Debug`: Whether to print hit/miss information to the debugger console. FALSE by default.
+- `StripLines`: Whether to automatically strip every line before checking. TRUE by default.
