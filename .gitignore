@@ -1,11 +1,13 @@
 .vs
 packages
+.DS_Store
+
+*.csproj.user
+*.nupkg
 
 /StripPreamble/bin
 /StripPreamble/obj
 /StripPreambleCommand/bin
 /StripPreambleCommand/obj
 
-*.csproj.user
-*.nupkg
-
+/StripPreamble.userprefs
