@@ -1,6 +1,6 @@
 ## Description
 
-This tool strips boilerplate text from the tops of files (which we refer to as "preamble"). This tool may also be used with many files (even specific via a filename pattern) which are then concatenated. The output is printed to standard out.
+This tool strips boilerplate text from the tops of files (which we refer to as "preamble"). This tool may also be used with many files (even specified via filename patterns) which are then concatenated. The output is printed to standard out.
 
 
 ## Basic Concept
@@ -12,7 +12,7 @@ A preamble is defined by a set of states (referred to, collectively, as a "match
 
 ### Practical
 
-This example is essentially taken from the CommandMatchers.cs file. This file has a class that statically describes some sample preambles for convenience. Feel free to submits pull-requests with matchers describing other common preambles.
+This example is essentially taken from the *CommonMatchers.cs* file. This file has a class that statically describes some sample preambles for convenience. Feel free to submits pull-requests with matchers describing other common preambles.
 
 This is what we want to remove from the tops of our files:
 
@@ -35,12 +35,25 @@ This is the matcher that identifies it:
 ```csharp
 PreambleMatcher VisualStudioSql = new PreambleMatcher(
 	new List<PreambleState>() {
+		// Open comment
 		new PreambleState(new List<string>() { @"^/\*$" }, 1, 1),
+
+        // Title
 		new PreambleState(new List<string>() { @"^(Pre|Post)\-Deployment Script Template$" }, 1, 1),
+		
+		// Top border (dashes)
 		new PreambleState(new List<string>() { @"^\-+$" }, 1, 1),
+
+		// Body content (any line that doesn't start with a dash).
 		new PreambleState(new List<string>() { @"^[^-]" }, 1, null),
+
+		// Bottom border (dashes)
 		new PreambleState(new List<string>() { @"^\-+$" }, 1, 1),
+
+		// Close comment
 		new PreambleState(new List<string>() { @"^\*/$" }, 1, 1),
+
+		// The following blank line
 		new PreambleState(new List<string>() { @"^$" }, 0, 1)
 	}
 );
@@ -91,6 +104,42 @@ Three are three ways to acquire/build StripPreamble:
 4. Build the assembly directly using the solution in the assembly directory. 
 
 (2) is suggested if you just want to use it as a simple console tool.
+
+
+## Usage
+
+### Via code
+
+```csharp
+Utility u = new Utility();
+IList<string> lines = u.GetLinesFromText(body, 10);
+
+CommonMatchers.SimpleBlock.TryStrip(lines);
+string output = String.Join(Environment.NewLine, lines);
+```
+
+### Via console
+
+```
+C:\code\local\StripPreamble\StripPreambleCommand\bin\Debug>StripPreambleCommand.exe vs_sql "-- FILE: " ..\..\Test\SqlFile1.sql ..\..\Test\SqlFile2.sql
+Reading: [C:\code\local\StripPreamble\StripPreambleCommand\Test\SqlFile1.sql]
+Reading: [C:\code\local\StripPreamble\StripPreambleCommand\Test\SqlFile2.sql]
+-- FILE: C:\code\local\StripPreamble\StripPreambleCommand\Test\SqlFile1.sql
+
+
+PRE DEPLOY SQL CONTENT 1
+
+
+-- FILE: C:\code\local\StripPreamble\StripPreambleCommand\Test\SqlFile2.sql
+
+
+POST DEPLOY SQL CONTENT 2
+
+
+
+```
+
+The lines beginning with "Reading:" are printed to STDERR but the file-content (below it) is printed to STDOUT.
 
 
 ## Tweaking/Debugging
