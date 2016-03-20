@@ -5,7 +5,7 @@ This tool strips boilerplate text from the tops of files (which we refer to as "
 
 ## Basic Concept
 
-A preamble is defined by a set of states (referred to, collectively, as a "matcher"). A state is defined as a set of regular-expressions (and more minor parameters). If we can match a certain number of lines to at least one of the regular expression in each state, in order, then we will have succeeded in identifying that there exists a preamble and it will be removed.
+A preamble is defined by a set of states (referred to, collectively, as a "matcher"). A state is defined as a set of regular-expressions (and more minor parameters). If we can match a certain number of lines to at least one of the regular expressions in each state, in order, then we will have succeeded in identifying that there exists a preamble and it will be removed.
 
 
 ## Examples
